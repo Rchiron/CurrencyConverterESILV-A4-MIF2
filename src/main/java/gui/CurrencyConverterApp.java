@@ -25,8 +25,10 @@ public class CurrencyConverterApp extends Application {
         ComboFrom = (ComboBox<String>) hbox.getChildren().get(0);
         ComboTo = (ComboBox<String>) hbox.getChildren().get(2);
 
-        ComboFrom.getItems().add("EUR");
-        ComboTo.getItems().add("USD");
+        for(Currency elem : mainController.mainCurrencyList.getList())
+        {
+            ComboFrom.getItems().add(elem.getDevise());
+        }
 
         Scene scene = new Scene(mainPane, 1000, 700);
 
