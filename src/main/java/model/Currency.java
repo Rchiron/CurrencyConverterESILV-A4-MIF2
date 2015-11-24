@@ -15,4 +15,8 @@ public class Currency {
     public String getDevise(){
         return this.devise;
     }
+
+    public double calcul(Currency from, Currency to, double qty){
+        return qty * from.taux / to.taux;
+    }
 }
