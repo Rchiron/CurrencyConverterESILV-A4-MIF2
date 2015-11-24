@@ -20,14 +20,16 @@ public class CurrencyConverterApp extends Application {
     @Override
     public void start(Stage primaryStage) throws IOException {
         mainController = new MainController();
+        mainController.converterList();
         Pane mainPane = FXMLLoader.load(getClass().getResource("CurrencyConverter.fxml"));
         HBox hbox = (HBox) mainPane.getChildren().get(0);
         ComboFrom = (ComboBox<String>) hbox.getChildren().get(0);
         ComboTo = (ComboBox<String>) hbox.getChildren().get(2);
 
-        for(Currency elem : mainController.mainCurrencyList.getList())
+        for(Currency elem : mainController.getList())
         {
             ComboFrom.getItems().add(elem.getDevise());
+            ComboTo.getItems().add(elem.getDevise());
         }
 
         Scene scene = new Scene(mainPane, 1000, 700);
