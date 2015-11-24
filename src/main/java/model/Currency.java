@@ -8,4 +8,8 @@ public class Currency {
         this.devise = devise;
         this.taux = taux;
     }
+
+    public String getDevise(){
+        return this.devise;
+    }
 }
