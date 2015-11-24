@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import java.lang.*?>
+<?import javafx.scene.layout.*?>
+
+
+<Pane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/8" xmlns:fx="http://javafx.com/fxml/1">
+   <children>
+      <HBox layoutX="141.0" layoutY="200.0" prefHeight="119.0" prefWidth="318.0">
+         <children>
+            <ComboBox prefHeight="25.0" prefWidth="100.0" />
+            <Label prefHeight="17.0" prefWidth="120.0" text="              &lt;--&gt;" />
+            <ComboBox prefHeight="25.0" prefWidth="100.0" />
+         </children>
+      </HBox>
+      <Button layoutX="274.0" layoutY="318.0" mnemonicParsing="false" text="Calcul" />
+      <TextArea layoutX="75.0" layoutY="88.0" prefHeight="25.0" prefWidth="133.0" />
+      <TextField layoutX="393.0" layoutY="88.0" prefHeight="25.0" prefWidth="133.0" />
+      <Label layoutX="123.0" layoutY="47.0" prefHeight="17.0" prefWidth="36.0" text="FROM" />
+      <Label layoutX="452.0" layoutY="47.0" text="TO" />
+   </children>
+</Pane>
