@@ -16,7 +16,7 @@ public class Currency {
         return this.devise;
     }
 
-    public double calcul(Currency from, Currency to, double qty){
-        return qty * from.taux / to.taux;
+    public double calcul(Currency to, double qty){
+        return qty * this.taux / to.taux;
     }
 }
