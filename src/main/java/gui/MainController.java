@@ -20,8 +20,6 @@ public class MainController implements Initializable{
     private List<Currency> currencyList;
 
     @FXML
-    private Button buttonCalcul;
-    @FXML
     private TextField textFrom;
     @FXML
     private TextField textTo;
@@ -29,6 +27,10 @@ public class MainController implements Initializable{
     private ComboBox<String> comboFrom;
     @FXML
     private ComboBox<String> comboTo;
+    @FXML
+    private Button buttonClose;
+    @FXML
+    private Button buttonExchange;
     @FXML
     private void handleButtonCalcul(){
         try {
@@ -59,6 +61,13 @@ public class MainController implements Initializable{
         }
     }
 
+    @FXML
+    private void handleButtonExchange(){
+        String nameTmp;
+        nameTmp = comboFrom.getValue().toString();
+        comboFrom.setValue(comboTo.getValue());
+        comboTo.setValue(nameTmp);
+    }
     public MainController(){
         currencyList = new ArrayList<>();
     }
