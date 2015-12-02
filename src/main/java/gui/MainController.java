@@ -1,16 +1,63 @@
 package gui;
 
+import javafx.fxml.FXML;
+import javafx.fxml.Initializable;
+
+import javafx.scene.control.Button;
+import javafx.scene.control.ComboBox;
+import javafx.scene.control.TextField;
 import model.Currency;
 
+import java.awt.*;
+import java.awt.event.ActionEvent;
+import java.awt.geom.Arc2D;
+import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
+import java.util.ResourceBundle;
 
-public class MainController {
-    public List<Currency> currencyList;
+public class MainController implements Initializable{
+    private List<Currency> currencyList;
+
+    @FXML
+    private Button buttonCalcul;
+    @FXML
+    private TextField textFrom;
+    @FXML
+    private TextField textTo;
+    @FXML
+    private ComboBox<String> comboFrom;
+    @FXML
+    private ComboBox<String> comboTo;
+    @FXML
+    private void handleButtonCalcul(){
+        double quantity = Double.valueOf(textFrom.getText());
+        String nameFrom = comboFrom.getValue().toString();
+        String nameTo = comboTo.getValue().toString();
+        double tauxFrom = 0;
+        double tauxTo = 0;
+        converterList();
+        for(int i = 0; i < this.currencyList.size(); i++)
+        {
+            if(nameFrom == this.currencyList.get(i).getDevise())
+            {
+                tauxFrom = this.currencyList.get(i).getTaux();
+            }
+            if(nameTo == this.currencyList.get(i).getDevise())
+            {
+                tauxTo = this.currencyList.get(i).getTaux();
+            }
+        }
+        Currency c1 = new Currency(nameFrom, tauxFrom);
+        Currency c2 = new Currency(nameTo, tauxTo);
+        double result = c1.calcul(c2, quantity);
+        textTo.setText(String.valueOf(result));
+    }
 
     public MainController(){
         currencyList = new ArrayList<>();
     }
+
 
     public void addCurrency(Currency c){
         currencyList.add(c);
@@ -38,5 +85,9 @@ public class MainController {
 
     public List<Currency> getList(){
         return this.currencyList;
+    }
+
+    @Override
+    public void initialize(URL url, ResourceBundle rb){
     }
 }
