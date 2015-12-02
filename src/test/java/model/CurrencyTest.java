@@ -5,6 +5,7 @@ import junit.framework.Assert;
 import org.junit.Test;
 
 public class CurrencyTest {
+    //Permet de tester si la méthode de Calcul est juste
     @Test
     public void testCalcul() throws Exception {
         Currency c1 = new Currency("eur", 1.06340);

@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
 <?import javafx.scene.effect.*?>
-<?import java.lang.*?>
 <?import javafx.scene.control.*?>
 <?import javafx.scene.layout.*?>
 
@@ -18,7 +17,7 @@
       <Label layoutX="182.0" layoutY="192.0" prefHeight="17.0" prefWidth="42.0" text="FROM :" />
       <TextField fx:id="textFrom" layoutX="153.0" layoutY="226.0" prefHeight="25.0" prefWidth="100.0" />
       <TextField fx:id="textTo" editable="false" layoutX="351.0" layoutY="226.0" prefHeight="25.0" prefWidth="100.0" />
-      <Button fx:id="buttonClose" layoutX="446.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonClose" prefHeight="25.0" prefWidth="100.0" text="Close" />
+      <Button fx:id="buttonClose" layoutX="441.0" layoutY="320.0" mnemonicParsing="false" onAction="#handleButtonClose" prefHeight="25.0" prefWidth="100.0" text="Close" />
       <Label layoutX="112.0" layoutY="30.0" prefHeight="17.0" prefWidth="91.0" text="Currency I Have :" />
       <Label layoutX="401.0" layoutY="30.0" prefHeight="17.0" prefWidth="91.0" text="Currency I Want :" />
       <Label layoutX="390.0" layoutY="192.0" prefHeight="17.0" prefWidth="23.0" text="TO :" />
