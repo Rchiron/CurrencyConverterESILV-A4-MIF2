@@ -9,8 +9,6 @@ import javafx.scene.control.TextField;
 import model.Currency;
 
 import javax.swing.*;
-import java.awt.*;
-import java.awt.geom.Arc2D;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.List;
