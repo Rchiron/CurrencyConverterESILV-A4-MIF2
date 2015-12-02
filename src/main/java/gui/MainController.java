@@ -68,6 +68,11 @@ public class MainController implements Initializable{
         comboFrom.setValue(comboTo.getValue());
         comboTo.setValue(nameTmp);
     }
+
+    @FXML
+    private void handleButtonClose(){
+        System.exit(0);
+    }
     public MainController(){
         currencyList = new ArrayList<>();
     }
