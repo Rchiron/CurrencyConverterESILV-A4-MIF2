@@ -55,14 +55,14 @@ public class MainController implements Initializable{
             textTo.setText(String.valueOf(result));
         }
         catch(NumberFormatException ex){
-            JOptionPane.showMessageDialog(null, "You need to enter an integers and choose the currency you have and you want");
+            JOptionPane.showMessageDialog(null, "You need to enter an integer on the textfield FROM and choose the currency you have and you want");
         }
     }
 
     @FXML
     private void handleButtonExchange(){
         String nameTmp;
-        nameTmp = comboFrom.getValue().toString();
+        nameTmp = comboFrom.getValue();
         comboFrom.setValue(comboTo.getValue());
         comboTo.setValue(nameTmp);
     }
