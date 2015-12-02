@@ -8,8 +8,8 @@ import javafx.scene.control.ComboBox;
 import javafx.scene.control.TextField;
 import model.Currency;
 
+import javax.swing.*;
 import java.awt.*;
-import java.awt.event.ActionEvent;
 import java.awt.geom.Arc2D;
 import java.net.URL;
 import java.util.ArrayList;
@@ -31,27 +31,32 @@ public class MainController implements Initializable{
     private ComboBox<String> comboTo;
     @FXML
     private void handleButtonCalcul(){
-        double quantity = Double.valueOf(textFrom.getText());
-        String nameFrom = comboFrom.getValue().toString();
-        String nameTo = comboTo.getValue().toString();
-        double tauxFrom = 0;
-        double tauxTo = 0;
-        converterList();
-        for(int i = 0; i < this.currencyList.size(); i++)
-        {
-            if(nameFrom == this.currencyList.get(i).getDevise())
+        try {
+            double quantity = Double.valueOf(textFrom.getText());
+            String nameFrom = comboFrom.getValue().toString();
+            String nameTo = comboTo.getValue().toString();
+            double tauxFrom = 0;
+            double tauxTo = 0;
+            converterList();
+            for(int i = 0; i < this.currencyList.size(); i++)
             {
-                tauxFrom = this.currencyList.get(i).getTaux();
+                if(nameFrom == this.currencyList.get(i).getDevise())
+                {
+                    tauxFrom = this.currencyList.get(i).getTaux();
+                }
+                if(nameTo == this.currencyList.get(i).getDevise())
+                {
+                    tauxTo = this.currencyList.get(i).getTaux();
+                }
             }
-            if(nameTo == this.currencyList.get(i).getDevise())
-            {
-                tauxTo = this.currencyList.get(i).getTaux();
-            }
+            Currency c1 = new Currency(nameFrom, tauxFrom);
+            Currency c2 = new Currency(nameTo, tauxTo);
+            double result = c1.calcul(c2, quantity);
+            textTo.setText(String.valueOf(result));
         }
-        Currency c1 = new Currency(nameFrom, tauxFrom);
-        Currency c2 = new Currency(nameTo, tauxTo);
-        double result = c1.calcul(c2, quantity);
-        textTo.setText(String.valueOf(result));
+        catch(NumberFormatException ex){
+            JOptionPane.showMessageDialog(null, "You need to enter an integers and choose the currency you have and you want");
+        }
     }
 
     public MainController(){

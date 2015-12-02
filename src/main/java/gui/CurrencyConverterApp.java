@@ -35,10 +35,11 @@ public class CurrencyConverterApp extends Application {
             ComboTo.getItems().add(elem.getDevise());
         }
 
-        Scene scene = new Scene(mainPane, 1000, 700);
+        Scene scene = new Scene(mainPane);
 
         primaryStage.setTitle("Currency Converter");
         primaryStage.setScene(scene);
+        primaryStage.centerOnScreen();
         primaryStage.show();
     }
 }
